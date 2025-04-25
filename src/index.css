@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 Html {
-    background-image: linear-gradient(to right, rgb(179, 255, 198), rgb(235, 255, 138));
+    background-image: linear-gradient(to right, rgba(179, 255, 198, 0.502), rgba(235, 255, 138, 0.508));
 }
 
 .card, .total {

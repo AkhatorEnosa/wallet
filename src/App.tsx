@@ -27,10 +27,10 @@ function App() {
   return (
     <div className="w-full h-screen flex justify-center items-center">
       <div className="relative w-[40%] h-[70%] flex flex-col justify-center items-center gap-2 bg-white rounded-t-3xl rounded-b-[80px] shadow-2xl">
-        <div className="absolute w-full h-full opacity-40">
-          <div className="absolute bg-amber-200 size-[60%] rotate-12 left-0 top-0 blur-3xl"></div>
-          <div className="absolute bg-green-300 size-[60%] rotate-12 right-0 bottom-0 blur-3xl"></div>
-        </div>
+        {/* <div className="absolute w-full h-full opacity-20">
+          <div className="absolute bg-amber-200 size-[60%] rounded-full rotate-12 left-0 top-0 blur-3xl"></div>
+          <div className="absolute bg-green-300 size-[60%] rounded-full rotate-12 right-20 bottom-0 blur-3xl"></div>
+        </div> */}
         <div className={`bg-black/95 absolute w-[400px] h-[50px] bottom-20 blur-2xl ${showAll ? "opacity-80" : "opacity-100"} delay-300 transitiona-all duration-300 z-0`}></div>
         <div className="relative bg-[#293c1e] w-[65%] h-[65%] rounded-t-3xl rounded-b-[65px] flex justify-center items-center">
           <motion.div
@@ -66,12 +66,17 @@ function App() {
               </p>
               <p className="text-sm">Total Balance</p>
             </div>
-            <div className="relative flex justify-center items-center text-4xl z-40" onClick={() => setShowAll(!showAll)}>
+            <motion.div className="relative w-full flex justify-center items-center z-40" onClick={() => setShowAll(!showAll)}
+              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.05 }}
+            >
 
-                <i className={`bi bi-eye-slash-fill text-[#7aab62]/50 ${!showAll ? "scale-100" : "scale-0"} cursor-pointer delay-300 transition-all duration-400`}></i>
-                <i className={`absolute bi bi-eye-fill text-[#7aab62]/80 ${showAll ? "scale-100" : "scale-0"} cursor-pointer delay-300 transition-all duration-400`}></i>
+              <div className="relative w-fit border-[1px] border-[#7aab62] hover:bg-[#7aab62]/20 text-[#7aab62] px-3 py-2 rounded-full flex justify-center items-center bg-[#1F2F16] cursor-pointer overflow-hidden z-30">
+                <i className={`w-full flex gap-2 justify-center items-center not-italic font-thin text-2xl bi bi-eye-slash-fill ${showAll ? "scale-100 opacity-100" : "scale-0 opacity-0"} delay-300 transition-all duration-400`}><span className="text-sm">Hide Balance</span></i>
+                <i className={`absolute w-full flex gap-2 justify-center items-center not-italic font-thin text-2xl bi bi-eye-fill ${!showAll ? "scale-100 opacity-100" : "scale-0 opacity-0"} delay-300 transition-all duration-400`}><span className="text-sm">Show Balance</span></i>
+              </div>
 
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
