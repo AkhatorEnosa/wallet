@@ -26,20 +26,21 @@ function App() {
 
   return (
     <div className="w-full h-screen flex justify-center items-center">
-      <div className="relative w-[40%] h-[70%] flex flex-col justify-center items-center gap-2 bg-white rounded-t-3xl rounded-b-[80px] shadow-2xl">
+      <div className="relative w-[350px] md:w-[450px] lg:w-[40%] h-[70%] flex flex-col justify-center items-center gap-2 bg-white rounded-t-3xl rounded-b-3xl lg:rounded-b-[80px] shadow-2xl">
         {/* <div className="absolute w-full h-full opacity-20">
           <div className="absolute bg-amber-200 size-[60%] rounded-full rotate-12 left-0 top-0 blur-3xl"></div>
           <div className="absolute bg-green-300 size-[60%] rounded-full rotate-12 right-20 bottom-0 blur-3xl"></div>
         </div> */}
-        <div className={`bg-black/95 absolute w-[400px] h-[50px] bottom-20 blur-2xl ${showAll ? "opacity-80" : "opacity-100"} delay-300 transitiona-all duration-300 z-0`}></div>
-        <div className="relative bg-[#293c1e] w-[65%] h-[65%] rounded-t-3xl rounded-b-[65px] flex justify-center items-center">
+        <div className={`bg-black/95 absolute w-[80%] md:w-[400px] h-[50px] bottom-20 blur-2xl ${showAll ? "opacity-80" : "opacity-100"} delay-300 transitiona-all duration-300 z-0`}></div>
+
+        <div className="relative bg-[#293c1e] min-w-[90%] h-[50%] md:w-[65%] md:h-[65%] rounded-t-3xl rounded-b-[65px] flex justify-center items-center">
           <motion.div
           variants={animationVariants}
           animate={showAll ? "active" : "inactive"}
           className="cards w-full h-full flex flex-col justify-center items-center gap-2">
             <Card 
               imgSrc="paypal.png"
-              variants="bg-[#d6d6d4] text-[#797a77] z-30"
+              variants={`bg-[#d6d6d4] text-[#797a77] ${showAll ? "top-9 md:top-12" : "top-10 md:top-14"} z-30`}
               value={"$345,865"}
               imgSize="w-[25%]"
             />
@@ -52,7 +53,7 @@ function App() {
             <Card 
               imgSrc="stripe.png"
               value={"$32,495"}
-              variants={`${showAll ? "-top-15" : "-top-7"} bg-[#A5A7EE] text-white z-10`}
+              variants={`${showAll ? "-top-10 md:-top-15" : "-top-7"} bg-[#A5A7EE] text-white z-10`}
               imgSize="w-[20%]"
             />
           </motion.div>

@@ -31,7 +31,7 @@ const Card = ({imgSrc, value, variants, imgSize}: CardProps) => {
     // initial={{ y: 0, scale: 1 }}
     variants={motionVariants}
     // animate={showAll ? "active" : "inactive"} 
-    className={`card absolute w-[90%] h-[70%] ${variants} rounded-3xl flex justify-center inset-shadow-sm inset-shadow-white`}>
+    className={`card absolute w-[90%] h-[50%] md:h-[70%] ${variants} rounded-3xl flex justify-center inset-shadow-sm inset-shadow-white`}>
       <div className="w-full h-fit flex justify-between items-center px-5 py-3">
         <img src={`./${imgSrc}`} alt="" className={imgSize}/>
         <p className="relative w-fit flex justify-center items-center">
